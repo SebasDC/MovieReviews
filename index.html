@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Reviews</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Add width: 100% */
+  box-sizing: border-box; /* Add box-sizing: border-box */
+}
+
+footer {
+  background-color: red;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Add width: 100% */
+  box-sizing: border-box; /* Add box-sizing: border-box */
+color: white;
+}
+
+
+footer p {
+  margin: 0; /* Remove margin from the paragraph */
+}
+
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+margin:0;
+}
+
+main p {
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+}
+
+main h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+main img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 20px; /* Updated margin property */
+}
+
+    button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 5px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 40px;
+      margin: 2px 1px;
+      cursor: pointer;
+    }
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+  </style>
+  <script>
+    const movieReviews = [
+      {
+        title: "Spiderman",
+        year: 1994,
+        review: "An incredible story of hope and friendship. Beautifully crafted with stunning performances.",
+        imageUrl: "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/111/47/111-47-101P/Spiderman-Chungkong-Poster.jpg"
+      },
+      {
+        title: "The Godfather",
+        year: 1972,
+        review: "A cinematic masterpiece that delves deep into the world of organized crime. Exceptional storytelling.",
+        imageUrl: "https://i.pinimg.com/736x/ba/03/de/ba03de663e1efadb7e9e4d170e9388af.jpg"
+      },
+      {
+        title: "Pulp Fiction",
+        year: 1994,
+        review: "A unique blend of humor, violence, and pop culture. Tarantino's groundbreaking storytelling shines.",
+        imageUrl: "https://i.etsystatic.com/37263606/r/il/cd5641/4158345065/il_fullxfull.4158345065_hfl9.jpg"
+      }
+    ];
+
+    function getRandomReview() {
+      return movieReviews[Math.floor(Math.random() * movieReviews.length)];
+    }
+
+function displayReview() {
+  const randomReview = getRandomReview();
+  const movieTitle = `${randomReview.title} (${randomReview.year})`;
+  document.getElementById("movieTitle").innerText = movieTitle;
+  document.getElementById("review").innerText = randomReview.review;
+  document.getElementById("poster").src = randomReview.imageUrl;
+}
+  </script>
+</head>
+<body onload="displayReview()">
+  <header>
+    <h1>⭐️ ⭐️ ⭐️ ⭐️ ⭐️ 🍿 </h1>
+  </header>
+  <div class="content">
+    <main>
+      <img id="poster" alt="Movie poster" />
+      <h2 id="movieTitle"></h2>
+      <p id="review"></p>
+    </main>
+  </div>
+  <footer>
+    <p>© 2023 NOT REAL/NO REASON.</p>
+    <button onclick="location.href='mailto:contact@moviereviews.com'">🤝</button>
+  </footer>
+</body>
+
+</html>
+
